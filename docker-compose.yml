@@ -1,0 +1,13 @@
+version: "3"
+services:
+  web:
+    image: nginx
+    ports:
+      - "8089:80"
+    volumes:
+      - ./web:/usr/share/nginx/html
+
+  db:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
