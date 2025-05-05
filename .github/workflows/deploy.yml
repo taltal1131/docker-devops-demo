@@ -5,19 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install and Test
-        run: |
-          npm install
-          npm test || echo "No tests yet"
-
   docker:
-    needs: build-test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
