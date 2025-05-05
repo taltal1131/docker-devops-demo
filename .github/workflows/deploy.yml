@@ -16,5 +16,5 @@ jobs:
 
       - name: Build & Push Docker image
         run: |
-          docker build -t gptteam2003/docker-devops-demo:latest .
-          docker push gptteam2003/docker-devops-demo:latest
+          docker build -t taltal1131/docker-devops-demo:latest .
+          docker push taltal1131/docker-devops-demo:latest
