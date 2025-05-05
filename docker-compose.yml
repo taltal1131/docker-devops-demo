@@ -2,12 +2,10 @@ version: '3.8'
 
 services:
   frontend:
-    image: nginx:latest
+    build: ./frontend
     ports:
       - "80:80"
-    volumes:
-      - ./web/index.html:/usr/share/nginx/html/index.html:ro
-
+      
   backend:
     build: ./backend
     ports:
