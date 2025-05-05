@@ -1,13 +1,26 @@
-version: "3"
-services:
-  web:
-    image: nginx
-    ports:
-      - "8089:80"
-    volumes:
-      - ./web:/usr/share/nginx/html
+version: '3.8'
 
-  db:
-    image: mongo:4.4
+services:
+  frontend:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./web/index.html:/usr/share/nginx/html/index.html:ro
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
     ports:
       - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
