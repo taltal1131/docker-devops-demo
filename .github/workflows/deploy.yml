@@ -11,8 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Change to app folder
-        working-directory: ./web
+      - name: Install and Test
         run: |
           npm install
           npm test || echo "No tests yet"
